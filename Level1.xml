@@ -1,0 +1,55 @@
+<!--MAIN LEVEL DEFINITION -->
+<!--the background texture for each level IS A SPRITE SHEET, meaning it is able to be animated-->
+<!--all background textures are sprite sheets. unwanted effects will happen if sprite sheet info isn't specified in the XML-->
+<!--code is set up where IT IS IMPLIED that the bricks will be placed exactly next to each other. however, the row and column padding gives space (or padding) between rows and columns, if defined-->
+<Level 
+    Number = "1"
+	RowCount="3"
+	ColumnCount="8"
+	RowPadding="50"
+	ColumnPadding="200"
+    SpriteSheetRows = "3"
+    SpriteSheetColumns = "4"
+    SpriteSheetSeconds = "1"
+	BackgroundTexture="Resources/Backgrounds/level1Background.png">
+	<BrickTypes><!-- Soft Brick -->
+		<Brick
+		Id="S"
+		Texture="Resources/Bricks/Soft.png"
+		HitPoints="1"
+		HitSound="Resources/Sounds/blockHit.wav"
+		BreakSound="Resources/Sounds/Soft_Break.wav"
+		BreakScore="50" />
+		<!-- Medium Brick -->
+		<Brick
+		Id="M"
+		Texture="Resources/Bricks/Medium.png"
+        DamagedTexture = "Resources/Bricks/MediumBroken.png"
+		HitPoints="2"
+		HitSound="Resources/Sounds/blockHit.wav"
+		BreakSound="Resources/Sounds/Medium_Break.wav"
+		BreakScore="100" />
+		<!-- Hard Brick -->
+		<Brick
+		Id="H"
+		Texture="Resources/Bricks/Hard.png"
+        DamagedTexture = "Resources/Bricks/HardBroken.png"
+		HitPoints="3"
+		HitSound="Resources/Sounds/blockHit.wav"
+		BreakSound="Resources/Sounds/Hard_Break.wav"
+		BreakScore="150" />
+		<!-- Impenetrable Brick 
+                hit points is defined as -1, which means that it cannot be broken
+        -->
+		<Brick
+		Id="I"
+		Texture="Resources/Bricks/Impenetrable.png"
+		HitPoints="-1" 
+		HitSound="Resources/Sounds/Impen_Hit.wav" />
+		</BrickTypes>
+	<BrickDesign>
+    M M M S I S M M,
+    S H S S M S H S,
+    M _ M _ _ S _ S
+	</BrickDesign>
+</Level>
